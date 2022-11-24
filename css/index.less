@@ -1,4 +1,6 @@
-/* 清除默认样式 */
+// 字体颜色
+@color-blue: #4c9bfd;
+@color-white: #ffffff;
 * {
   padding: 0;
   margin: 0;
@@ -9,8 +11,12 @@ a {
 li {
   list-style-type: none;
 }
+h3,
+h4 {
+  font-weight: normal;
+}
 html {
-  font-size: 10px;
+  font-size: 80px;
 }
 html,
 body {
@@ -31,4 +37,63 @@ body {
   margin: 0 auto;
   background: url(../images/logo.png) no-repeat;
   background-size: contain;
+  display: flex;
+  justify-content: space-between;
+  & > div {
+    width: 7rem;
+    height: 100%;
+    padding: 1.15rem 0rem 0rem 0.35rem;
+    box-sizing: border-box;
+    // background-color: skyblue;
+    .facility {
+      width: 100%;
+      height: 1.625rem;
+      padding: 0.3125rem;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      & > div:nth-of-type(1) > p > span {
+        background-color: #2d6af6;
+      }
+      & > div:nth-of-type(2) > p > span,
+      & > div:nth-of-type(3) > p > span {
+        background-color: #83caa6;
+      }
+      & > div:nth-of-type(4) > p > span {
+        background-color: #db4e3f;
+      }
+      & > div {
+        width: 1.2rem;
+        height: 100%;
+        h4 {
+          font-size: 0.45rem;
+          color: @color-white;
+        }
+        p {
+          font-size: 0.15rem;
+          color: @color-blue;
+        }
+      }
+    }
+  }
+  .center {
+    flex: 1;
+    padding: 1.8rem 0.25rem 0rem 0.25rem;
+  }
+}
+
+/* 图片边框 */
+.border {
+  border: 1px solid transparent;
+  border-image-source: url(../images/border.png);
+  border-image-slice: 51 38 20 132;
+  border-image-width: 0.6375rem 0.475rem 0.25rem 1.65rem;
+}
+/* span小标 */
+.span {
+  display: inline-block;
+  width: 0.075rem;
+  height: 0.15rem;
+  margin: 0.04rem 0.08rem 0rem 0.04rem;
+  border-radius: 0.0375rem;
 }
