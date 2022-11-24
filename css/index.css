@@ -36,8 +36,13 @@ body {
 .viewport > div {
   width: 7rem;
   height: 100%;
-  padding: 1.15rem 0rem 0rem 0.35rem;
   box-sizing: border-box;
+}
+.viewport .left {
+  padding: 1.15rem 0rem 0rem 0.35rem;
+}
+.viewport .right {
+  padding: 1.15rem 0.35rem 0rem 0rem;
 }
 .viewport .left,
 .viewport .center,
@@ -288,6 +293,7 @@ body {
   flex: 1;
   padding: 1.8rem 0.25rem 0rem 0.25rem;
   /* 设备数据统计部分 */
+  /* 全国用户总量统计 */
 }
 .viewport .center .china {
   width: 100%;
@@ -308,6 +314,44 @@ body {
   flex: 1;
   background-color: rgba(36, 96, 134, 0.5);
   margin-top: 0.25rem;
+}
+.viewport .center .brokenLine {
+  height: 4.7rem;
+}
+.viewport .right {
+  /* 订单量部分 */
+  /* 销售额统计部分 */
+  /* 分布部分 */
+  /* 进度统计部分 */
+}
+.viewport .right > div {
+  width: 100%;
+  margin-bottom: 0.35rem;
+}
+.viewport .right .order {
+  height: 2.2rem;
+}
+.viewport .right .brokenLine {
+  height: 3.5rem;
+}
+.viewport .right .distribute {
+  height: 3.3rem;
+  display: flex;
+  justify-content: space-between;
+  /* 渠道分布 */
+  /* 季度销售进度 */
+}
+.viewport .right .distribute .system {
+  flex: 3;
+  height: 100%;
+  margin-right: 0.25rem;
+}
+.viewport .right .distribute .quarterly {
+  flex: 2.5;
+  height: 100%;
+}
+.viewport .right .progress {
+  height: 3.3rem;
 }
 /* 图片边框 */
 .border {

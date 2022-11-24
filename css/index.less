@@ -40,9 +40,13 @@ body {
   & > div {
     width: 7rem;
     height: 100%;
-    padding: 1.15rem 0rem 0rem 0.35rem;
     box-sizing: border-box;
-    // background-color: skyblue;
+  }
+  .left {
+    padding: 1.15rem 0rem 0rem 0.35rem;
+  }
+  .right {
+    padding: 1.15rem 0.35rem 0rem 0rem;
   }
   .left,
   .center,
@@ -151,7 +155,6 @@ body {
               background-color: #173270;
             }
             span {
-             
               &:nth-of-type(1) {
                 margin-right: 0.3rem;
               }
@@ -250,6 +253,51 @@ body {
         background-color: rgba(36, 96, 134, 0.5);
         margin-top: 0.25rem;
       }
+    }
+
+    /* 全国用户总量统计 */
+    .brokenLine {
+      height: 4.7rem;
+    }
+  }
+  .right {
+    & > div {
+      width: 100%;
+      margin-bottom: 0.35rem;
+    }
+
+    /* 订单量部分 */
+    .order {
+      height: 2.2rem;
+    }
+
+    /* 销售额统计部分 */
+    .brokenLine {
+      height: 3.5rem;
+    }
+
+    /* 分布部分 */
+    .distribute {
+      height: 3.3rem;
+      display: flex;
+      justify-content: space-between;
+
+      /* 渠道分布 */
+      .system {
+        flex: 3;
+        height: 100%;
+        margin-right: 0.25rem;
+      }
+
+      /* 季度销售进度 */
+      .quarterly {
+        flex: 2.5;
+        height: 100%;
+      }
+    }
+    /* 进度统计部分 */
+    .progress {
+      height: 3.3rem;
     }
   }
 }
