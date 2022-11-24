@@ -11,7 +11,6 @@ a {
 li {
   list-style-type: none;
 }
-h3,
 h4 {
   font-weight: normal;
 }
@@ -274,6 +273,12 @@ body {
     /* 销售额统计部分 */
     .brokenLine {
       height: 3.5rem;
+      box-sizing: border-box;
+      padding: 0.25rem;
+      h4 {
+        font-size: 0.3125rem;
+        color: @color-white;
+      }
     }
 
     /* 分布部分 */
@@ -281,23 +286,43 @@ body {
       height: 3.3rem;
       display: flex;
       justify-content: space-between;
+      & > div {
+        height: 100%;
+        box-sizing: border-box;
+        padding: 0.25rem;
+        h4 {
+          font-size: 0.3125rem;
+          color: @color-white;
+        }
+      }
 
       /* 渠道分布 */
       .system {
         flex: 3;
-        height: 100%;
         margin-right: 0.25rem;
       }
 
       /* 季度销售进度 */
       .quarterly {
         flex: 2.5;
-        height: 100%;
       }
     }
     /* 进度统计部分 */
     .progress {
       height: 3.3rem;
+      & > div {
+        .progressEcharts {
+          height: 2.2rem;
+          background-color: skyblue;
+        }
+        & > div:nth-of-type(2) {
+          height: 2.2rem;
+          & > div:nth-of-type(1) {
+            margin-top: 0.1rem;
+            margin-bottom: 0rem;
+          }
+        }
+      }
     }
   }
 }
