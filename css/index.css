@@ -39,12 +39,16 @@ body {
   padding: 1.15rem 0rem 0rem 0.35rem;
   box-sizing: border-box;
 }
-.viewport .left {
+.viewport .left,
+.viewport .center,
+.viewport .right {
   /* 设备部分 */
   /* 监控部分 */
   /* 点位分布统计部分 */
 }
-.viewport .left .facility {
+.viewport .left .facility,
+.viewport .center .facility,
+.viewport .right .facility {
   width: 100%;
   height: 1.625rem;
   padding: 0.3125rem;
@@ -52,54 +56,78 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.viewport .left .facility > div:nth-of-type(1) > p > span {
+.viewport .left .facility > div:nth-of-type(1) > p > span,
+.viewport .center .facility > div:nth-of-type(1) > p > span,
+.viewport .right .facility > div:nth-of-type(1) > p > span {
   background-color: #2d6af6;
 }
 .viewport .left .facility > div:nth-of-type(2) > p > span,
-.viewport .left .facility > div:nth-of-type(3) > p > span {
+.viewport .center .facility > div:nth-of-type(2) > p > span,
+.viewport .right .facility > div:nth-of-type(2) > p > span,
+.viewport .left .facility > div:nth-of-type(3) > p > span,
+.viewport .center .facility > div:nth-of-type(3) > p > span,
+.viewport .right .facility > div:nth-of-type(3) > p > span {
   background-color: #83caa6;
 }
-.viewport .left .facility > div:nth-of-type(4) > p > span {
+.viewport .left .facility > div:nth-of-type(4) > p > span,
+.viewport .center .facility > div:nth-of-type(4) > p > span,
+.viewport .right .facility > div:nth-of-type(4) > p > span {
   background-color: #db4e3f;
 }
-.viewport .left .facility > div {
+.viewport .left .facility > div,
+.viewport .center .facility > div,
+.viewport .right .facility > div {
   width: 1.2rem;
   height: 100%;
 }
-.viewport .left .facility > div h4 {
+.viewport .left .facility > div h4,
+.viewport .center .facility > div h4,
+.viewport .right .facility > div h4 {
   font-size: 0.45rem;
   color: #ffffff;
 }
-.viewport .left .facility > div p {
+.viewport .left .facility > div p,
+.viewport .center .facility > div p,
+.viewport .right .facility > div p {
   font-size: 0.2rem;
   color: #4c9bfd;
 }
-.viewport .left .control {
+.viewport .left .control,
+.viewport .center .control,
+.viewport .right .control {
   width: 100%;
   height: 6.4rem;
   box-sizing: border-box;
   padding: 0.25rem;
   margin: 0.35rem 0rem;
 }
-.viewport .left .control .control-title {
+.viewport .left .control .control-title,
+.viewport .center .control .control-title,
+.viewport .right .control .control-title {
   width: 100%;
   height: 0.5rem;
   margin: 0.1rem 0rem;
   display: flex;
 }
-.viewport .left .control .control-title li {
+.viewport .left .control .control-title li,
+.viewport .center .control .control-title li,
+.viewport .right .control .control-title li {
   color: #1950c4;
   font-size: 0.3125rem;
   cursor: pointer;
 }
-.viewport .left .control .control-title li:empty {
+.viewport .left .control .control-title li:empty,
+.viewport .center .control .control-title li:empty,
+.viewport .right .control .control-title li:empty {
   width: 0.06rem;
   height: 0.5rem;
   background-color: #6feeef;
   margin: 0rem 0.4rem;
   border-radius: 0.0625rem;
 }
-.viewport .left .control .control-header-list {
+.viewport .left .control .control-header-list,
+.viewport .center .control .control-header-list,
+.viewport .right .control .control-header-list {
   width: 100%;
   height: 0.55rem;
   background-color: rgba(27, 50, 88, 0.8);
@@ -107,34 +135,48 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.viewport .left .control .control-header-list li {
+.viewport .left .control .control-header-list li,
+.viewport .center .control .control-header-list li,
+.viewport .right .control .control-header-list li {
   height: 100%;
   padding: 0.125rem;
   box-sizing: border-box;
   font-size: 0.2rem;
   margin-right: 0.5rem;
 }
-.viewport .left .control .control-header-list li:nth-of-type(1) {
+.viewport .left .control .control-header-list li:nth-of-type(1),
+.viewport .center .control .control-header-list li:nth-of-type(1),
+.viewport .right .control .control-header-list li:nth-of-type(1) {
   margin-right: 0.15rem;
 }
-.viewport .left .control .control-header-list li:nth-of-type(2) {
+.viewport .left .control .control-header-list li:nth-of-type(2),
+.viewport .center .control .control-header-list li:nth-of-type(2),
+.viewport .right .control .control-header-list li:nth-of-type(2) {
   flex: 1;
 }
-.viewport .left .control .control-main {
+.viewport .left .control .control-main,
+.viewport .center .control .control-main,
+.viewport .right .control .control-main {
   width: 100%;
   height: 4.5rem;
   margin-top: 0.125rem;
   overflow: hidden;
 }
-.viewport .left .control .control-main .control-main-list {
+.viewport .left .control .control-main .control-main-list,
+.viewport .center .control .control-main .control-main-list,
+.viewport .right .control .control-main .control-main-list {
   width: 100%;
   height: 100%;
   animation: scrolling 16s linear 0s infinite;
 }
-.viewport .left .control .control-main .control-main-list:hover {
+.viewport .left .control .control-main .control-main-list:hover,
+.viewport .center .control .control-main .control-main-list:hover,
+.viewport .right .control .control-main .control-main-list:hover {
   animation-play-state: paused;
 }
-.viewport .left .control .control-main .control-main-list li {
+.viewport .left .control .control-main .control-main-list li,
+.viewport .center .control .control-main .control-main-list li,
+.viewport .right .control .control-main .control-main-list li {
   color: #4c9bfd;
   font-size: 0.2rem;
   padding: 0.125rem 0.1rem;
@@ -143,30 +185,44 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.viewport .left .control .control-main .control-main-list li:hover {
+.viewport .left .control .control-main .control-main-list li:hover,
+.viewport .center .control .control-main .control-main-list li:hover,
+.viewport .right .control .control-main .control-main-list li:hover {
   background-color: #173270;
 }
-.viewport .left .control .control-main .control-main-list li span:nth-of-type(1) {
-  margin-right: 0.28rem;
+.viewport .left .control .control-main .control-main-list li span:nth-of-type(1),
+.viewport .center .control .control-main .control-main-list li span:nth-of-type(1),
+.viewport .right .control .control-main .control-main-list li span:nth-of-type(1) {
+  margin-right: 0.3rem;
 }
-.viewport .left .control .control-main .control-main-list li span:nth-of-type(2) {
+.viewport .left .control .control-main .control-main-list li span:nth-of-type(2),
+.viewport .center .control .control-main .control-main-list li span:nth-of-type(2),
+.viewport .right .control .control-main .control-main-list li span:nth-of-type(2) {
   flex: 1;
 }
-.viewport .left .control .control-main .control-main-list li span:nth-of-type(3) {
+.viewport .left .control .control-main .control-main-list li span:nth-of-type(3),
+.viewport .center .control .control-main .control-main-list li span:nth-of-type(3),
+.viewport .right .control .control-main .control-main-list li span:nth-of-type(3) {
   margin-right: 0.7rem;
 }
-.viewport .left .inodeBitmap {
+.viewport .left .inodeBitmap,
+.viewport .center .inodeBitmap,
+.viewport .right .inodeBitmap {
   width: 100%;
   height: 4.65rem;
   margin-bottom: 0.4rem;
   box-sizing: border-box;
   padding: 0.25rem;
 }
-.viewport .left .inodeBitmap h4 {
+.viewport .left .inodeBitmap h4,
+.viewport .center .inodeBitmap h4,
+.viewport .right .inodeBitmap h4 {
   font-size: 0.3125rem;
   color: #ffffff;
 }
-.viewport .left .inodeBitmap > div {
+.viewport .left .inodeBitmap > div,
+.viewport .center .inodeBitmap > div,
+.viewport .right .inodeBitmap > div {
   width: 100%;
   height: 100%;
   display: flex;
@@ -175,12 +231,16 @@ body {
   padding: 0rem 0.15rem;
   margin-top: 0.15rem;
 }
-.viewport .left .inodeBitmap > div .inodeBitmapEcharts {
+.viewport .left .inodeBitmap > div .inodeBitmapEcharts,
+.viewport .center .inodeBitmap > div .inodeBitmapEcharts,
+.viewport .right .inodeBitmap > div .inodeBitmapEcharts {
   flex: 2;
   margin-right: 0.25rem;
   height: 3.4rem;
 }
-.viewport .left .inodeBitmap > div > div:nth-of-type(2) {
+.viewport .left .inodeBitmap > div > div:nth-of-type(2),
+.viewport .center .inodeBitmap > div > div:nth-of-type(2),
+.viewport .right .inodeBitmap > div > div:nth-of-type(2) {
   width: 2rem;
   height: 3.4rem;
   background: url(../images/rect.png) no-repeat;
@@ -189,26 +249,38 @@ body {
   flex-wrap: wrap;
   align-content: center;
 }
-.viewport .left .inodeBitmap > div > div:nth-of-type(2) > div:nth-of-type(1) {
+.viewport .left .inodeBitmap > div > div:nth-of-type(2) > div:nth-of-type(1),
+.viewport .center .inodeBitmap > div > div:nth-of-type(2) > div:nth-of-type(1),
+.viewport .right .inodeBitmap > div > div:nth-of-type(2) > div:nth-of-type(1) {
   margin-bottom: 0.3rem;
 }
-.viewport .left .inodeBitmap > div > div:nth-of-type(2) > div:nth-of-type(1) > p > span {
+.viewport .left .inodeBitmap > div > div:nth-of-type(2) > div:nth-of-type(1) > p > span,
+.viewport .center .inodeBitmap > div > div:nth-of-type(2) > div:nth-of-type(1) > p > span,
+.viewport .right .inodeBitmap > div > div:nth-of-type(2) > div:nth-of-type(1) > p > span {
   background-color: #ed3f35;
 }
-.viewport .left .inodeBitmap > div > div:nth-of-type(2) > div:nth-of-type(2) > p > span {
+.viewport .left .inodeBitmap > div > div:nth-of-type(2) > div:nth-of-type(2) > p > span,
+.viewport .center .inodeBitmap > div > div:nth-of-type(2) > div:nth-of-type(2) > p > span,
+.viewport .right .inodeBitmap > div > div:nth-of-type(2) > div:nth-of-type(2) > p > span {
   background-color: #eacf19;
 }
-.viewport .left .inodeBitmap > div > div:nth-of-type(2) > div {
+.viewport .left .inodeBitmap > div > div:nth-of-type(2) > div,
+.viewport .center .inodeBitmap > div > div:nth-of-type(2) > div,
+.viewport .right .inodeBitmap > div > div:nth-of-type(2) > div {
   width: 100%;
   height: 1rem;
   box-sizing: border-box;
   padding-left: 0.3rem;
 }
-.viewport .left .inodeBitmap > div > div:nth-of-type(2) > div h4 {
+.viewport .left .inodeBitmap > div > div:nth-of-type(2) > div h4,
+.viewport .center .inodeBitmap > div > div:nth-of-type(2) > div h4,
+.viewport .right .inodeBitmap > div > div:nth-of-type(2) > div h4 {
   font-size: 0.35rem;
   color: #ffffff;
 }
-.viewport .left .inodeBitmap > div > div:nth-of-type(2) > div p {
+.viewport .left .inodeBitmap > div > div:nth-of-type(2) > div p,
+.viewport .center .inodeBitmap > div > div:nth-of-type(2) > div p,
+.viewport .right .inodeBitmap > div > div:nth-of-type(2) > div p {
   font-size: 0.23rem;
   color: #f8ab05;
 }
@@ -222,6 +294,7 @@ body {
   height: 7.7rem;
   display: flex;
   flex-direction: column;
+  margin-bottom: 0.375rem;
 }
 .viewport .center .china h4 {
   text-indent: 0.5rem;

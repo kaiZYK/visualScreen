@@ -42,8 +42,8 @@ for (let i = 0; i < controlTitleItem.length; i++) {
       {
         name: "学员分布统计",
         type: "pie",
-        radius: [10, 60],
-        center: ["50%", "45%"],
+        radius: ["10%", "55%"],
+        center: ["50%", "55%"],
         roseType: "radius",
         itemStyle: {
           borderRadius: 8,
@@ -71,7 +71,7 @@ for (let i = 0; i < controlTitleItem.length; i++) {
       "#4b9cf8",
     ],
     textStyle: {
-      fontSize: 14,
+      fontSize: 11,
       textBorderColor: "withe",
       textBorderWidth: 1,
     },
@@ -86,6 +86,7 @@ for (let i = 0; i < controlTitleItem.length; i++) {
   });
 })();
 
+/* 设备数据统计部分 */
 (function () {
   let chinaMap = document.getElementsByClassName("chinaMap")[0];
   let myChart = echarts.init(chinaMap);
@@ -276,7 +277,7 @@ for (let i = 0; i < controlTitleItem.length; i++) {
     return res;
   };
 
-  let color = ["#a6c84c", "#ffa022", "#46bee9","skyblue"]; //航线的颜色
+  let color = ["#a6c84c", "#ffa022", "#46bee9", "skyblue"]; //航线的颜色
   let series = [];
   [
     ["西安", XAData],
@@ -404,6 +405,135 @@ for (let i = 0; i < controlTitleItem.length; i++) {
       },
     },
     series: series,
+  };
+  myChart.setOption(option);
+  window.addEventListener("load", function () {
+    myChart.resize();
+  });
+  window.addEventListener("resize", function () {
+    myChart.resize();
+  });
+})();
+
+/* 全国用户总量统计 */
+(function () {
+  let brokenLineEcharts =
+    document.getElementsByClassName("brokenLineEcharts")[0];
+  let myChart = echarts.init(brokenLineEcharts);
+  let item = {
+    value: 1200,
+    itemStyle: {
+      color: "#2c3f62",
+    },
+    tooltip: {
+      extraCssText: "opacity:0;",
+    },
+  };
+  let option = {
+    tooltip: {
+      show: true,
+    },
+    grid: {
+      left: "0%",
+      right: "0%",
+      bottom: "3%",
+      top: "3%",
+      containLabel: true,
+      show: true,
+      borderWidth: 1,
+      borderColor: "#11aecb",
+    },
+    xAxis: [
+      {
+        type: "category",
+        data: [
+          "郑州",
+          "广州",
+          "北京",
+          "深圳",
+          "合肥",
+          "",
+          "......",
+          "",
+          "杭州",
+          "厦门",
+          "济南",
+          "成都",
+          "重庆",
+        ],
+        axisTick: {
+          alignWithLabel: true,
+          show: false,
+        },
+        axisLabel: {
+          color: "#71f2fb",
+          fontSize: 12,
+        },
+        axisLine: {
+          show: true,
+          lineStyle: {
+            color: "#11aecb",
+          },
+        },
+      },
+    ],
+    yAxis: [
+      {
+        type: "value",
+        axisLabel: {
+          color: "#71f2fb",
+          fontSize: 12,
+        },
+        splitLine: {
+          show: true,
+          lineStyle: {
+            color: "#11aecb",
+          },
+        },
+      },
+    ],
+    series: [
+      {
+        name: "Direct",
+        type: "bar",
+        barWidth: "60%",
+        itemStyle: {
+          color: {
+            type: "linear",
+            x: 0,
+            y: 0,
+            x2: 0,
+            y2: 1,
+            colorStops: [
+              {
+                offset: 0,
+                color: "#00fbfa", // 0% 处的颜色
+              },
+              {
+                offset: 1,
+                color: "#0065cf", // 100% 处的颜色
+              },
+            ],
+            global: false, // 缺省为 false
+          },
+        },
+        data: [
+          2100,
+          1900,
+          1700,
+          1560,
+          1400,
+          item,
+          item,
+          item,
+          900,
+          750,
+          600,
+          480,
+          240,
+        ],
+      },
+    ],
   };
   myChart.setOption(option);
   window.addEventListener("load", function () {
