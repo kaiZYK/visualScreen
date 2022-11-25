@@ -20,7 +20,6 @@ html {
 html,
 body {
   width: 100%;
-  // height: 100%;
 }
 body {
   background: url(../images/bg.jpg) no-repeat;
@@ -172,7 +171,7 @@ body {
     /* 点位分布统计部分 */
     .inodeBitmap {
       width: 100%;
-      height: 4.9rem;
+      height: 5.1rem;
       margin-bottom: 0.4rem;
       box-sizing: border-box;
       padding: 0.25rem;
@@ -256,7 +255,7 @@ body {
 
     /* 全国用户总量统计 */
     .brokenLine {
-      height: 4.95rem;
+      height: 5.15rem;
     }
   }
   .right {
@@ -390,7 +389,7 @@ body {
         flex: 2.5;
         & > h4:nth-of-type(2) {
           font-size: 0.45rem;
-          height: 1.35rem;
+          height: 1.3rem;
           line-height: 1.35rem;
           text-align: center;
         }
@@ -404,8 +403,11 @@ body {
           & > div:nth-of-type(2) > p > span {
             background-color: #ed3f35;
           }
+          & > div:nth-of-type(1) {
+            margin-right: 0.125rem;
+          }
           & > div {
-            width: 1.4rem;
+            width: 1rem;
             height: 100%;
             h4 {
               font-size: 0.4rem;
@@ -414,8 +416,11 @@ body {
             }
             p {
               color: #4cfde2 !important;
-              font-size: .2125rem;
+              font-size: 0.2rem;
               color: @color-blue;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
             }
           }
         }
@@ -424,11 +429,10 @@ body {
 
     /* 进度统计部分 */
     .progress {
-      height: 3.6rem;
+      height: 3.5rem;
       & > div {
         .progressEcharts {
           height: 2.4rem;
-          background-color: skyblue;
         }
         & > div:nth-of-type(2) {
           height: 2.4rem;

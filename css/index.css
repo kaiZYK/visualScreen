@@ -213,7 +213,7 @@ body {
 .viewport .center .inodeBitmap,
 .viewport .right .inodeBitmap {
   width: 100%;
-  height: 4.9rem;
+  height: 5.1rem;
   margin-bottom: 0.4rem;
   box-sizing: border-box;
   padding: 0.25rem;
@@ -315,7 +315,7 @@ body {
   margin-top: 0.25rem;
 }
 .viewport .center .brokenLine {
-  height: 4.95rem;
+  height: 5.15rem;
 }
 .viewport .right {
   /* 订单量部分 */
@@ -447,7 +447,7 @@ body {
 }
 .viewport .right .distribute .quarterly > h4:nth-of-type(2) {
   font-size: 0.45rem;
-  height: 1.35rem;
+  height: 1.3rem;
   line-height: 1.35rem;
   text-align: center;
 }
@@ -462,8 +462,11 @@ body {
 .viewport .right .distribute .quarterly > div > div:nth-of-type(2) > p > span {
   background-color: #ed3f35;
 }
+.viewport .right .distribute .quarterly > div > div:nth-of-type(1) {
+  margin-right: 0.125rem;
+}
 .viewport .right .distribute .quarterly > div > div {
-  width: 1.4rem;
+  width: 1rem;
   height: 100%;
 }
 .viewport .right .distribute .quarterly > div > div h4 {
@@ -473,15 +476,17 @@ body {
 }
 .viewport .right .distribute .quarterly > div > div p {
   color: #4cfde2 !important;
-  font-size: 0.2125rem;
+  font-size: 0.2rem;
   color: #4c9bfd;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .viewport .right .progress {
-  height: 3.6rem;
+  height: 3.5rem;
 }
 .viewport .right .progress > div .progressEcharts {
   height: 2.4rem;
-  background-color: skyblue;
 }
 .viewport .right .progress > div > div:nth-of-type(2) {
   height: 2.4rem;
