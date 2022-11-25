@@ -445,6 +445,37 @@ body {
 .viewport .right .distribute .quarterly {
   flex: 2.5;
 }
+.viewport .right .distribute .quarterly > h4:nth-of-type(2) {
+  font-size: 0.45rem;
+  height: 1.35rem;
+  line-height: 1.35rem;
+  text-align: center;
+}
+.viewport .right .distribute .quarterly > div {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+}
+.viewport .right .distribute .quarterly > div > div:nth-of-type(1) > p > span {
+  background-color: #6acca3;
+}
+.viewport .right .distribute .quarterly > div > div:nth-of-type(2) > p > span {
+  background-color: #ed3f35;
+}
+.viewport .right .distribute .quarterly > div > div {
+  width: 1.4rem;
+  height: 100%;
+}
+.viewport .right .distribute .quarterly > div > div h4 {
+  font-size: 0.4rem;
+  color: #ffffff;
+  margin-bottom: 0.1rem;
+}
+.viewport .right .distribute .quarterly > div > div p {
+  color: #4cfde2 !important;
+  font-size: 0.2125rem;
+  color: #4c9bfd;
+}
 .viewport .right .progress {
   height: 3.6rem;
 }

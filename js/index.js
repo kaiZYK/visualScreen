@@ -887,3 +887,6 @@ order.addEventListener("mouseleave", function () {
     myChart.resize();
   });
 })();
+
+
+/* 进度统计部分 */

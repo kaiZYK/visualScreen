@@ -388,6 +388,37 @@ body {
       /* 季度销售进度 */
       .quarterly {
         flex: 2.5;
+        & > h4:nth-of-type(2) {
+          font-size: 0.45rem;
+          height: 1.35rem;
+          line-height: 1.35rem;
+          text-align: center;
+        }
+        & > div {
+          width: 100%;
+          box-sizing: border-box;
+          display: flex;
+          & > div:nth-of-type(1) > p > span {
+            background-color: #6acca3;
+          }
+          & > div:nth-of-type(2) > p > span {
+            background-color: #ed3f35;
+          }
+          & > div {
+            width: 1.4rem;
+            height: 100%;
+            h4 {
+              font-size: 0.4rem;
+              color: @color-white;
+              margin-bottom: 0.1rem;
+            }
+            p {
+              color: #4cfde2 !important;
+              font-size: .2125rem;
+              color: @color-blue;
+            }
+          }
+        }
       }
     }
 
