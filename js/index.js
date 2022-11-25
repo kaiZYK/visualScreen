@@ -543,3 +543,57 @@ for (let i = 0; i < controlTitleItem.length; i++) {
     myChart.resize();
   });
 })();
+
+/* 订单量部分 */
+// 获取订单
+let order = document.getElementsByClassName("order")[0];
+// 获取标题
+let orderItems = document.getElementsByClassName("orderItem");
+// 获取数据
+let orderDatas = document.getElementsByClassName("orderData");
+let orderDataList = [
+  ["20,301,987", "99834"],
+  ["5,005,969", "24616"],
+  ["1,668,656", "8205"],
+  ["556,218", "27.563"],
+];
+// 遍历标题数组
+for (let i = 0; i < orderItems.length; i++) {
+  // 添加点击事件
+  orderItems[i].addEventListener("click", function () {
+    // 排他法
+    for (let j = 0; j < orderItems.length; j++) {
+      // 全部的标题都删除选中类名
+      orderItems[j].classList.remove("orderItemActive");
+    }
+    // 当前的标题都添加选中类名
+    this.classList.add("orderItemActive");
+    orderDatas[0].innerHTML = orderDataList[i][0];
+    orderDatas[1].innerHTML = orderDataList[i][1];
+  });
+}
+// 订单标题循环的下标
+let orderIndex = 0;
+// 订单的计时器
+let orderTimer = null;
+orderTimer = setInterval(function () {
+  orderIndex++;
+  if (orderIndex >= orderItems.length) {
+    orderIndex = 0;
+  }
+  orderItems[orderIndex].click();
+}, 2000);
+// 滑到订单的时候结束计时器
+order.addEventListener("mouseenter", function () {
+  clearInterval(orderTimer);
+});
+// 滑到订单的时候开始计时器
+order.addEventListener("mouseleave", function () {
+  orderTimer = setInterval(function () {
+    orderIndex++;
+    if (orderIndex >= orderItems.length) {
+      orderIndex = 0;
+    }
+    orderItems[orderIndex].click();
+  }, 2000);
+});

@@ -328,7 +328,56 @@ body {
   margin-bottom: 0.35rem;
 }
 .viewport .right .order {
+  width: 100%;
   height: 2.2rem;
+  box-sizing: border-box;
+  padding: 0.25rem;
+  margin: 0.35rem 0rem;
+}
+.viewport .right .order .orderList {
+  width: 100%;
+  height: 0.5rem;
+  margin: 0.1rem 0rem;
+  display: flex;
+}
+.viewport .right .order .orderList li {
+  color: #1950c4;
+  font-size: 0.28rem;
+  cursor: pointer;
+}
+.viewport .right .order .orderList li:empty {
+  width: 0.03rem;
+  height: 0.35rem;
+  background-color: #6feeef;
+  margin: 0.05rem 0.3rem 0rem 0.3rem;
+  border-radius: 0.0625rem;
+}
+.viewport .right .order > div {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+}
+.viewport .right .order > div > div:nth-of-type(1) > p > span {
+  background-color: #ed3f35;
+}
+.viewport .right .order > div > div:nth-of-type(2) > p > span {
+  background-color: #eacf19;
+}
+.viewport .right .order > div > div:nth-of-type(1) {
+  margin-right: 1.7rem;
+}
+.viewport .right .order > div > div {
+  width: 1.4rem;
+  height: 100%;
+}
+.viewport .right .order > div > div h4 {
+  font-size: 0.35rem;
+  color: #ffffff;
+  margin-bottom: 0.1rem;
+}
+.viewport .right .order > div > div p {
+  font-size: 0.2rem;
+  color: #4c9bfd;
 }
 .viewport .right .brokenLine {
   height: 3.5rem;
@@ -404,4 +453,8 @@ body {
 /* 监控部分内容隐藏 */
 .control-hidden {
   display: none !important;
+}
+/* 订单量标题选中 */
+.orderItemActive {
+  color: #ffffff !important;
 }
