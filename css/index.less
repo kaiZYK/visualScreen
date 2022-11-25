@@ -1,0 +1,494 @@
+// 字体颜色
+@color-blue: #4c9bfd;
+@color-white: #ffffff;
+* {
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}
+h4 {
+  font-weight: normal;
+}
+html {
+  font-size: 80px;
+}
+html,
+body {
+  width: 100%;
+}
+body {
+  background: url(../images/bg.jpg) no-repeat;
+  background-size: cover;
+}
+/* 视口 */
+.viewport {
+  min-width: 1024px;
+  max-width: 1920px;
+  // min-height: 800px;
+  margin: 0 auto;
+  background: url(../images/logo.png) no-repeat;
+  background-size: contain;
+  display: flex;
+  justify-content: space-between;
+  & > div {
+    width: 7rem;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  .left {
+    padding: 1.15rem 0rem 0rem 0.35rem;
+  }
+  .right {
+    padding: 1.15rem 0.35rem 0rem 0rem;
+  }
+  .left,
+  .center,
+  .right {
+    /* 设备部分 */
+    .facility {
+      width: 100%;
+      height: 1.625rem;
+      padding: 0.3125rem;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      & > div:nth-of-type(1) > p > span {
+        background-color: #2d6af6;
+      }
+      & > div:nth-of-type(2) > p > span,
+      & > div:nth-of-type(3) > p > span {
+        background-color: #83caa6;
+      }
+      & > div:nth-of-type(4) > p > span {
+        background-color: #db4e3f;
+      }
+      & > div {
+        width: 1.2rem;
+        height: 100%;
+        h4 {
+          font-size: 0.45rem;
+          color: @color-white;
+        }
+        p {
+          font-size: 0.2rem;
+          color: @color-blue;
+        }
+      }
+    }
+
+    /* 监控部分 */
+    .control {
+      width: 100%;
+      height: 6.4rem;
+      box-sizing: border-box;
+      padding: 0.25rem;
+      margin: 0.35rem 0rem;
+      .control-title {
+        width: 100%;
+        height: 0.5rem;
+        margin: 0.1rem 0rem;
+        display: flex;
+
+        li {
+          color: #1950c4;
+          font-size: 0.3125rem;
+          cursor: pointer;
+          &:empty {
+            width: 0.06rem;
+            height: 0.5rem;
+            background-color: #6feeef;
+            margin: 0rem 0.4rem;
+            border-radius: 0.0625rem;
+          }
+        }
+      }
+      .control-header-list {
+        width: 100%;
+        height: 0.55rem;
+        background-color: rgba(27, 50, 88, 0.8);
+        color: @color-blue;
+        display: flex;
+        justify-content: space-between;
+
+        li {
+          height: 100%;
+          padding: 0.125rem;
+          box-sizing: border-box;
+          font-size: 0.2rem;
+          margin-right: 0.5rem;
+          &:nth-of-type(1) {
+            margin-right: 0.15rem;
+          }
+          &:nth-of-type(2) {
+            flex: 1;
+          }
+        }
+      }
+      .control-main {
+        width: 100%;
+        height: 4.5rem;
+        margin-top: 0.125rem;
+        overflow: hidden;
+        .control-main-list {
+          width: 100%;
+          height: 100%;
+          animation: scrolling 16s linear 0s infinite;
+          &:hover {
+            animation-play-state: paused;
+          }
+          li {
+            color: @color-blue;
+            font-size: 0.2rem;
+            padding: 0.125rem 0.1rem;
+            cursor: pointer;
+            font-size: 0.15rem;
+            display: flex;
+            justify-content: space-between;
+            &:hover {
+              background-color: #173270;
+            }
+            span {
+              &:nth-of-type(1) {
+                margin-right: 0.3rem;
+              }
+              &:nth-of-type(2) {
+                flex: 1;
+              }
+              &:nth-of-type(3) {
+                margin-right: 0.7rem;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    /* 点位分布统计部分 */
+    .inodeBitmap {
+      width: 100%;
+      height: 5.1rem;
+      margin-bottom: 0.4rem;
+      box-sizing: border-box;
+      padding: 0.25rem;
+      h4 {
+        font-size: 0.3125rem;
+        color: @color-white;
+      }
+      & > div {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        padding: 0rem 0.15rem;
+        margin-top: 0.15rem;
+        .inodeBitmapEcharts {
+          flex: 2;
+          margin-right: 0.25rem;
+          height: 3.7rem;
+        }
+        & > div:nth-of-type(2) {
+          width: 2rem;
+          height: 3.7rem;
+          background: url(../images/rect.png) no-repeat;
+          background-size: cover;
+          display: flex;
+          flex-wrap: wrap;
+          align-content: center;
+          & > div:nth-of-type(1) {
+            margin-bottom: 0.3rem;
+          }
+          & > div:nth-of-type(1) > p > span {
+            background-color: #ed3f35;
+          }
+          & > div:nth-of-type(2) > p > span {
+            background-color: #eacf19;
+          }
+          & > div {
+            width: 100%;
+            height: 1rem;
+            box-sizing: border-box;
+            padding-left: 0.3rem;
+            h4 {
+              font-size: 0.35rem;
+              color: @color-white;
+            }
+            p {
+              font-size: 0.23rem;
+              color: #f8ab05;
+            }
+          }
+        }
+      }
+    }
+  }
+  .center {
+    flex: 1;
+    padding: 1.8rem 0.25rem 0rem 0.25rem;
+
+    /* 设备数据统计部分 */
+    .china {
+      width: 100%;
+      height: 7.7rem;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 0.375rem;
+      h4 {
+        text-indent: 0.5rem;
+        font-size: 0.25rem;
+        color: @color-white;
+        background: url(../images/shebei.png) no-repeat 0.0625rem 0.0125rem;
+        background-size: 0.35rem;
+      }
+      .chinaMap {
+        width: 100%;
+        flex: 1;
+        background-color: rgba(36, 96, 134, 0.5);
+        margin-top: 0.25rem;
+      }
+    }
+
+    /* 全国用户总量统计 */
+    .brokenLine {
+      height: 5.15rem;
+    }
+  }
+  .right {
+    & > div {
+      width: 100%;
+      margin-bottom: 0.35rem;
+    }
+
+    /* 订单量部分 */
+    .order {
+      width: 100%;
+      height: 2.2rem;
+      box-sizing: border-box;
+      padding: 0.25rem;
+      margin: 0.35rem 0rem;
+      .orderList {
+        width: 100%;
+        height: 0.5rem;
+        margin: 0.1rem 0rem;
+        display: flex;
+        li {
+          color: #1950c4;
+          font-size: 0.28rem;
+          cursor: pointer;
+          &:empty {
+            width: 0.03rem;
+            height: 0.35rem;
+            background-color: #6feeef;
+            margin: 0.05rem 0.3rem 0rem 0.3rem;
+            border-radius: 0.0625rem;
+          }
+        }
+      }
+      & > div {
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        & > div:nth-of-type(1) > p > span {
+          background-color: #ed3f35;
+        }
+        & > div:nth-of-type(2) > p > span {
+          background-color: #eacf19;
+        }
+        & > div:nth-of-type(1) {
+          margin-right: 1.7rem;
+        }
+        & > div {
+          width: 1.4rem;
+          height: 100%;
+          h4 {
+            font-size: 0.35rem;
+            color: @color-white;
+            margin-bottom: 0.1rem;
+          }
+          p {
+            font-size: 0.2rem;
+            color: @color-blue;
+          }
+        }
+      }
+    }
+
+    /* 销售额统计部分 */
+    .saleroom {
+      height: 3.5rem;
+      box-sizing: border-box;
+      padding: 0.25rem;
+      .saleroomTitle {
+        display: flex;
+        h4 {
+          font-size: 0.3125rem;
+          color: @color-white;
+        }
+        .saleroomList {
+          width: auto;
+          height: 0.4rem;
+          display: flex;
+          li {
+            width: 0.4rem;
+            height: 100%;
+            text-align: center;
+            color: #1950c4;
+            font-size: 0.25rem;
+            cursor: pointer;
+            margin: 0rem 0.15rem;
+            border-radius: 0.0625rem;
+            &:empty {
+              width: 0.03rem;
+              height: 0.35rem;
+              background-color: #6feeef;
+              margin: 0rem 0.3rem;
+              border-radius: 0.0625rem;
+            }
+          }
+        }
+      }
+      .saleroomEcharts {
+        width: 100%;
+        height: 2.4rem;
+        margin-top: 0.125rem;
+      }
+    }
+
+    /* 分布部分 */
+    .distribute {
+      height: 3.3rem;
+      display: flex;
+      justify-content: space-between;
+      & > div {
+        height: 100%;
+        box-sizing: border-box;
+        padding: 0.25rem;
+        h4 {
+          font-size: 0.3125rem;
+          color: @color-white;
+        }
+      }
+
+      /* 渠道分布 */
+      .system {
+        flex: 3;
+        margin-right: 0.25rem;
+        .systemEcharts {
+          width: 100%;
+          height: 2.3rem;
+        }
+      }
+
+      /* 季度销售进度 */
+      .quarterly {
+        flex: 2.5;
+        & > h4:nth-of-type(2) {
+          font-size: 0.45rem;
+          height: 1.3rem;
+          line-height: 1.35rem;
+          text-align: center;
+        }
+        & > div {
+          width: 100%;
+          box-sizing: border-box;
+          display: flex;
+          & > div:nth-of-type(1) > p > span {
+            background-color: #6acca3;
+          }
+          & > div:nth-of-type(2) > p > span {
+            background-color: #ed3f35;
+          }
+          & > div:nth-of-type(1) {
+            margin-right: 0.125rem;
+          }
+          & > div {
+            width: 1rem;
+            height: 100%;
+            h4 {
+              font-size: 0.4rem;
+              color: @color-white;
+              margin-bottom: 0.1rem;
+            }
+            p {
+              color: #4cfde2 !important;
+              font-size: 0.2rem;
+              color: @color-blue;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+          }
+        }
+      }
+    }
+
+    /* 进度统计部分 */
+    .progress {
+      height: 3.5rem;
+      & > div {
+        .progressEcharts {
+          height: 2.4rem;
+        }
+        & > div:nth-of-type(2) {
+          height: 2.4rem;
+          & > div:nth-of-type(1) {
+            margin-top: 0.1rem;
+            margin-bottom: 0rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* 图片边框 */
+.border {
+  border: 1px solid transparent;
+  border-image-source: url(../images/border.png);
+  border-image-slice: 51 38 20 132;
+  border-image-width: 0.6375rem 0.475rem 0.25rem 1.65rem;
+}
+
+/* span小标 */
+.span {
+  display: inline-block;
+  width: 0.075rem;
+  height: 0.15rem;
+  margin: 0.04rem 0.08rem 0rem 0.04rem;
+  border-radius: 0.0375rem;
+}
+
+/* 滚动动画 */
+@keyframes scrolling {
+  0% {
+  }
+  100% {
+    transform: translateY(-430px);
+  }
+}
+
+/* 监控部分标题选中 */
+.control-title-active {
+  color: @color-white !important;
+}
+
+/* 监控部分内容隐藏 */
+.control-hidden {
+  display: none !important;
+}
+
+/* 订单量标题选中 */
+.orderItemActive {
+  color: @color-white !important;
+}
+
+/* 销售额标题选中 */
+.saleroomItemActive {
+  color: @color-white !important;
+  background-color: #4893f1;
+}

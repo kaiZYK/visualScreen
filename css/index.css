@@ -1,0 +1,535 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}
+h4 {
+  font-weight: normal;
+}
+html {
+  font-size: 80px;
+}
+html,
+body {
+  width: 100%;
+}
+body {
+  background: url(../images/bg.jpg) no-repeat;
+  background-size: cover;
+}
+/* 视口 */
+.viewport {
+  min-width: 1024px;
+  max-width: 1920px;
+  margin: 0 auto;
+  background: url(../images/logo.png) no-repeat;
+  background-size: contain;
+  display: flex;
+  justify-content: space-between;
+}
+.viewport > div {
+  width: 7rem;
+  height: 100%;
+  box-sizing: border-box;
+}
+.viewport .left {
+  padding: 1.15rem 0rem 0rem 0.35rem;
+}
+.viewport .right {
+  padding: 1.15rem 0.35rem 0rem 0rem;
+}
+.viewport .left,
+.viewport .center,
+.viewport .right {
+  /* 设备部分 */
+  /* 监控部分 */
+  /* 点位分布统计部分 */
+}
+.viewport .left .facility,
+.viewport .center .facility,
+.viewport .right .facility {
+  width: 100%;
+  height: 1.625rem;
+  padding: 0.3125rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+.viewport .left .facility > div:nth-of-type(1) > p > span,
+.viewport .center .facility > div:nth-of-type(1) > p > span,
+.viewport .right .facility > div:nth-of-type(1) > p > span {
+  background-color: #2d6af6;
+}
+.viewport .left .facility > div:nth-of-type(2) > p > span,
+.viewport .center .facility > div:nth-of-type(2) > p > span,
+.viewport .right .facility > div:nth-of-type(2) > p > span,
+.viewport .left .facility > div:nth-of-type(3) > p > span,
+.viewport .center .facility > div:nth-of-type(3) > p > span,
+.viewport .right .facility > div:nth-of-type(3) > p > span {
+  background-color: #83caa6;
+}
+.viewport .left .facility > div:nth-of-type(4) > p > span,
+.viewport .center .facility > div:nth-of-type(4) > p > span,
+.viewport .right .facility > div:nth-of-type(4) > p > span {
+  background-color: #db4e3f;
+}
+.viewport .left .facility > div,
+.viewport .center .facility > div,
+.viewport .right .facility > div {
+  width: 1.2rem;
+  height: 100%;
+}
+.viewport .left .facility > div h4,
+.viewport .center .facility > div h4,
+.viewport .right .facility > div h4 {
+  font-size: 0.45rem;
+  color: #ffffff;
+}
+.viewport .left .facility > div p,
+.viewport .center .facility > div p,
+.viewport .right .facility > div p {
+  font-size: 0.2rem;
+  color: #4c9bfd;
+}
+.viewport .left .control,
+.viewport .center .control,
+.viewport .right .control {
+  width: 100%;
+  height: 6.4rem;
+  box-sizing: border-box;
+  padding: 0.25rem;
+  margin: 0.35rem 0rem;
+}
+.viewport .left .control .control-title,
+.viewport .center .control .control-title,
+.viewport .right .control .control-title {
+  width: 100%;
+  height: 0.5rem;
+  margin: 0.1rem 0rem;
+  display: flex;
+}
+.viewport .left .control .control-title li,
+.viewport .center .control .control-title li,
+.viewport .right .control .control-title li {
+  color: #1950c4;
+  font-size: 0.3125rem;
+  cursor: pointer;
+}
+.viewport .left .control .control-title li:empty,
+.viewport .center .control .control-title li:empty,
+.viewport .right .control .control-title li:empty {
+  width: 0.06rem;
+  height: 0.5rem;
+  background-color: #6feeef;
+  margin: 0rem 0.4rem;
+  border-radius: 0.0625rem;
+}
+.viewport .left .control .control-header-list,
+.viewport .center .control .control-header-list,
+.viewport .right .control .control-header-list {
+  width: 100%;
+  height: 0.55rem;
+  background-color: rgba(27, 50, 88, 0.8);
+  color: #4c9bfd;
+  display: flex;
+  justify-content: space-between;
+}
+.viewport .left .control .control-header-list li,
+.viewport .center .control .control-header-list li,
+.viewport .right .control .control-header-list li {
+  height: 100%;
+  padding: 0.125rem;
+  box-sizing: border-box;
+  font-size: 0.2rem;
+  margin-right: 0.5rem;
+}
+.viewport .left .control .control-header-list li:nth-of-type(1),
+.viewport .center .control .control-header-list li:nth-of-type(1),
+.viewport .right .control .control-header-list li:nth-of-type(1) {
+  margin-right: 0.15rem;
+}
+.viewport .left .control .control-header-list li:nth-of-type(2),
+.viewport .center .control .control-header-list li:nth-of-type(2),
+.viewport .right .control .control-header-list li:nth-of-type(2) {
+  flex: 1;
+}
+.viewport .left .control .control-main,
+.viewport .center .control .control-main,
+.viewport .right .control .control-main {
+  width: 100%;
+  height: 4.5rem;
+  margin-top: 0.125rem;
+  overflow: hidden;
+}
+.viewport .left .control .control-main .control-main-list,
+.viewport .center .control .control-main .control-main-list,
+.viewport .right .control .control-main .control-main-list {
+  width: 100%;
+  height: 100%;
+  animation: scrolling 16s linear 0s infinite;
+}
+.viewport .left .control .control-main .control-main-list:hover,
+.viewport .center .control .control-main .control-main-list:hover,
+.viewport .right .control .control-main .control-main-list:hover {
+  animation-play-state: paused;
+}
+.viewport .left .control .control-main .control-main-list li,
+.viewport .center .control .control-main .control-main-list li,
+.viewport .right .control .control-main .control-main-list li {
+  color: #4c9bfd;
+  font-size: 0.2rem;
+  padding: 0.125rem 0.1rem;
+  cursor: pointer;
+  font-size: 0.15rem;
+  display: flex;
+  justify-content: space-between;
+}
+.viewport .left .control .control-main .control-main-list li:hover,
+.viewport .center .control .control-main .control-main-list li:hover,
+.viewport .right .control .control-main .control-main-list li:hover {
+  background-color: #173270;
+}
+.viewport .left .control .control-main .control-main-list li span:nth-of-type(1),
+.viewport .center .control .control-main .control-main-list li span:nth-of-type(1),
+.viewport .right .control .control-main .control-main-list li span:nth-of-type(1) {
+  margin-right: 0.3rem;
+}
+.viewport .left .control .control-main .control-main-list li span:nth-of-type(2),
+.viewport .center .control .control-main .control-main-list li span:nth-of-type(2),
+.viewport .right .control .control-main .control-main-list li span:nth-of-type(2) {
+  flex: 1;
+}
+.viewport .left .control .control-main .control-main-list li span:nth-of-type(3),
+.viewport .center .control .control-main .control-main-list li span:nth-of-type(3),
+.viewport .right .control .control-main .control-main-list li span:nth-of-type(3) {
+  margin-right: 0.7rem;
+}
+.viewport .left .inodeBitmap,
+.viewport .center .inodeBitmap,
+.viewport .right .inodeBitmap {
+  width: 100%;
+  height: 5.1rem;
+  margin-bottom: 0.4rem;
+  box-sizing: border-box;
+  padding: 0.25rem;
+}
+.viewport .left .inodeBitmap h4,
+.viewport .center .inodeBitmap h4,
+.viewport .right .inodeBitmap h4 {
+  font-size: 0.3125rem;
+  color: #ffffff;
+}
+.viewport .left .inodeBitmap > div,
+.viewport .center .inodeBitmap > div,
+.viewport .right .inodeBitmap > div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0rem 0.15rem;
+  margin-top: 0.15rem;
+}
+.viewport .left .inodeBitmap > div .inodeBitmapEcharts,
+.viewport .center .inodeBitmap > div .inodeBitmapEcharts,
+.viewport .right .inodeBitmap > div .inodeBitmapEcharts {
+  flex: 2;
+  margin-right: 0.25rem;
+  height: 3.7rem;
+}
+.viewport .left .inodeBitmap > div > div:nth-of-type(2),
+.viewport .center .inodeBitmap > div > div:nth-of-type(2),
+.viewport .right .inodeBitmap > div > div:nth-of-type(2) {
+  width: 2rem;
+  height: 3.7rem;
+  background: url(../images/rect.png) no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+.viewport .left .inodeBitmap > div > div:nth-of-type(2) > div:nth-of-type(1),
+.viewport .center .inodeBitmap > div > div:nth-of-type(2) > div:nth-of-type(1),
+.viewport .right .inodeBitmap > div > div:nth-of-type(2) > div:nth-of-type(1) {
+  margin-bottom: 0.3rem;
+}
+.viewport .left .inodeBitmap > div > div:nth-of-type(2) > div:nth-of-type(1) > p > span,
+.viewport .center .inodeBitmap > div > div:nth-of-type(2) > div:nth-of-type(1) > p > span,
+.viewport .right .inodeBitmap > div > div:nth-of-type(2) > div:nth-of-type(1) > p > span {
+  background-color: #ed3f35;
+}
+.viewport .left .inodeBitmap > div > div:nth-of-type(2) > div:nth-of-type(2) > p > span,
+.viewport .center .inodeBitmap > div > div:nth-of-type(2) > div:nth-of-type(2) > p > span,
+.viewport .right .inodeBitmap > div > div:nth-of-type(2) > div:nth-of-type(2) > p > span {
+  background-color: #eacf19;
+}
+.viewport .left .inodeBitmap > div > div:nth-of-type(2) > div,
+.viewport .center .inodeBitmap > div > div:nth-of-type(2) > div,
+.viewport .right .inodeBitmap > div > div:nth-of-type(2) > div {
+  width: 100%;
+  height: 1rem;
+  box-sizing: border-box;
+  padding-left: 0.3rem;
+}
+.viewport .left .inodeBitmap > div > div:nth-of-type(2) > div h4,
+.viewport .center .inodeBitmap > div > div:nth-of-type(2) > div h4,
+.viewport .right .inodeBitmap > div > div:nth-of-type(2) > div h4 {
+  font-size: 0.35rem;
+  color: #ffffff;
+}
+.viewport .left .inodeBitmap > div > div:nth-of-type(2) > div p,
+.viewport .center .inodeBitmap > div > div:nth-of-type(2) > div p,
+.viewport .right .inodeBitmap > div > div:nth-of-type(2) > div p {
+  font-size: 0.23rem;
+  color: #f8ab05;
+}
+.viewport .center {
+  flex: 1;
+  padding: 1.8rem 0.25rem 0rem 0.25rem;
+  /* 设备数据统计部分 */
+  /* 全国用户总量统计 */
+}
+.viewport .center .china {
+  width: 100%;
+  height: 7.7rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.375rem;
+}
+.viewport .center .china h4 {
+  text-indent: 0.5rem;
+  font-size: 0.25rem;
+  color: #ffffff;
+  background: url(../images/shebei.png) no-repeat 0.0625rem 0.0125rem;
+  background-size: 0.35rem;
+}
+.viewport .center .china .chinaMap {
+  width: 100%;
+  flex: 1;
+  background-color: rgba(36, 96, 134, 0.5);
+  margin-top: 0.25rem;
+}
+.viewport .center .brokenLine {
+  height: 5.15rem;
+}
+.viewport .right {
+  /* 订单量部分 */
+  /* 销售额统计部分 */
+  /* 分布部分 */
+  /* 进度统计部分 */
+}
+.viewport .right > div {
+  width: 100%;
+  margin-bottom: 0.35rem;
+}
+.viewport .right .order {
+  width: 100%;
+  height: 2.2rem;
+  box-sizing: border-box;
+  padding: 0.25rem;
+  margin: 0.35rem 0rem;
+}
+.viewport .right .order .orderList {
+  width: 100%;
+  height: 0.5rem;
+  margin: 0.1rem 0rem;
+  display: flex;
+}
+.viewport .right .order .orderList li {
+  color: #1950c4;
+  font-size: 0.28rem;
+  cursor: pointer;
+}
+.viewport .right .order .orderList li:empty {
+  width: 0.03rem;
+  height: 0.35rem;
+  background-color: #6feeef;
+  margin: 0.05rem 0.3rem 0rem 0.3rem;
+  border-radius: 0.0625rem;
+}
+.viewport .right .order > div {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+}
+.viewport .right .order > div > div:nth-of-type(1) > p > span {
+  background-color: #ed3f35;
+}
+.viewport .right .order > div > div:nth-of-type(2) > p > span {
+  background-color: #eacf19;
+}
+.viewport .right .order > div > div:nth-of-type(1) {
+  margin-right: 1.7rem;
+}
+.viewport .right .order > div > div {
+  width: 1.4rem;
+  height: 100%;
+}
+.viewport .right .order > div > div h4 {
+  font-size: 0.35rem;
+  color: #ffffff;
+  margin-bottom: 0.1rem;
+}
+.viewport .right .order > div > div p {
+  font-size: 0.2rem;
+  color: #4c9bfd;
+}
+.viewport .right .saleroom {
+  height: 3.5rem;
+  box-sizing: border-box;
+  padding: 0.25rem;
+}
+.viewport .right .saleroom .saleroomTitle {
+  display: flex;
+}
+.viewport .right .saleroom .saleroomTitle h4 {
+  font-size: 0.3125rem;
+  color: #ffffff;
+}
+.viewport .right .saleroom .saleroomTitle .saleroomList {
+  width: auto;
+  height: 0.4rem;
+  display: flex;
+}
+.viewport .right .saleroom .saleroomTitle .saleroomList li {
+  width: 0.4rem;
+  height: 100%;
+  text-align: center;
+  color: #1950c4;
+  font-size: 0.25rem;
+  cursor: pointer;
+  margin: 0rem 0.15rem;
+  border-radius: 0.0625rem;
+}
+.viewport .right .saleroom .saleroomTitle .saleroomList li:empty {
+  width: 0.03rem;
+  height: 0.35rem;
+  background-color: #6feeef;
+  margin: 0rem 0.3rem;
+  border-radius: 0.0625rem;
+}
+.viewport .right .saleroom .saleroomEcharts {
+  width: 100%;
+  height: 2.4rem;
+  margin-top: 0.125rem;
+}
+.viewport .right .distribute {
+  height: 3.3rem;
+  display: flex;
+  justify-content: space-between;
+  /* 渠道分布 */
+  /* 季度销售进度 */
+}
+.viewport .right .distribute > div {
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0.25rem;
+}
+.viewport .right .distribute > div h4 {
+  font-size: 0.3125rem;
+  color: #ffffff;
+}
+.viewport .right .distribute .system {
+  flex: 3;
+  margin-right: 0.25rem;
+}
+.viewport .right .distribute .system .systemEcharts {
+  width: 100%;
+  height: 2.3rem;
+}
+.viewport .right .distribute .quarterly {
+  flex: 2.5;
+}
+.viewport .right .distribute .quarterly > h4:nth-of-type(2) {
+  font-size: 0.45rem;
+  height: 1.3rem;
+  line-height: 1.35rem;
+  text-align: center;
+}
+.viewport .right .distribute .quarterly > div {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+}
+.viewport .right .distribute .quarterly > div > div:nth-of-type(1) > p > span {
+  background-color: #6acca3;
+}
+.viewport .right .distribute .quarterly > div > div:nth-of-type(2) > p > span {
+  background-color: #ed3f35;
+}
+.viewport .right .distribute .quarterly > div > div:nth-of-type(1) {
+  margin-right: 0.125rem;
+}
+.viewport .right .distribute .quarterly > div > div {
+  width: 1rem;
+  height: 100%;
+}
+.viewport .right .distribute .quarterly > div > div h4 {
+  font-size: 0.4rem;
+  color: #ffffff;
+  margin-bottom: 0.1rem;
+}
+.viewport .right .distribute .quarterly > div > div p {
+  color: #4cfde2 !important;
+  font-size: 0.2rem;
+  color: #4c9bfd;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.viewport .right .progress {
+  height: 3.5rem;
+}
+.viewport .right .progress > div .progressEcharts {
+  height: 2.4rem;
+}
+.viewport .right .progress > div > div:nth-of-type(2) {
+  height: 2.4rem;
+}
+.viewport .right .progress > div > div:nth-of-type(2) > div:nth-of-type(1) {
+  margin-top: 0.1rem;
+  margin-bottom: 0rem;
+}
+/* 图片边框 */
+.border {
+  border: 1px solid transparent;
+  border-image-source: url(../images/border.png);
+  border-image-slice: 51 38 20 132;
+  border-image-width: 0.6375rem 0.475rem 0.25rem 1.65rem;
+}
+/* span小标 */
+.span {
+  display: inline-block;
+  width: 0.075rem;
+  height: 0.15rem;
+  margin: 0.04rem 0.08rem 0rem 0.04rem;
+  border-radius: 0.0375rem;
+}
+/* 滚动动画 */
+@keyframes scrolling {
+  100% {
+    transform: translateY(-430px);
+  }
+}
+/* 监控部分标题选中 */
+.control-title-active {
+  color: #ffffff !important;
+}
+/* 监控部分内容隐藏 */
+.control-hidden {
+  display: none !important;
+}
+/* 订单量标题选中 */
+.orderItemActive {
+  color: #ffffff !important;
+}
+/* 销售额标题选中 */
+.saleroomItemActive {
+  color: #ffffff !important;
+  background-color: #4893f1;
+}
