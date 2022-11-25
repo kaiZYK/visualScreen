@@ -337,6 +337,7 @@
           </div>
         </div>
       </div>
+
       <div class="center">
         <!-- 设备数据统计部分 -->
         <div class="china">
@@ -389,8 +390,19 @@
         </div>
 
         <!--  销售额统计部分 -->
-        <div class="brokenLine border">
-          <h4>销售额统计</h4>
+        <div class="saleroom border">
+          <div class="saleroomTitle">
+            <h4>销售额统计</h4>
+            <ul class="saleroomList">
+              <li></li>
+              <li class="saleroomItem saleroomItemActive">年</li>
+              <li class="saleroomItem">季</li>
+              <li class="saleroomItem">月</li>
+              <li class="saleroomItem">周</li>
+            </ul>
+          </div>
+          <!-- echarts部分 -->
+          <div class="saleroomEcharts"></div>
         </div>
 
         <!--  分布部分 -->
@@ -398,6 +410,8 @@
           <!-- 渠道分布 -->
           <div class="system border">
             <h4>渠道分布</h4>
+            <!-- echarts部分 -->
+            <div class="systemEcharts"></div>
           </div>
 
           <!-- 季度销售进度 -->

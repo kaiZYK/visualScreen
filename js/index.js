@@ -568,6 +568,7 @@ for (let i = 0; i < orderItems.length; i++) {
     }
     // 当前的标题都添加选中类名
     this.classList.add("orderItemActive");
+    // 数据更改
     orderDatas[0].innerHTML = orderDataList[i][0];
     orderDatas[1].innerHTML = orderDataList[i][1];
   });
@@ -597,3 +598,292 @@ order.addEventListener("mouseleave", function () {
     orderItems[orderIndex].click();
   }, 2000);
 });
+
+/* 销售额统计部分 */
+(function () {
+  // 获取销售额
+  let saleroom = document.getElementsByClassName("saleroom")[0];
+  // 获取标题
+  let saleroomItems = document.getElementsByClassName("saleroomItem");
+  let saleroomData = [
+    // 年
+    [
+      [24, 40, 101, 134, 90, 230, 210, 230, 120, 230, 210, 120],
+      [40, 64, 191, 324, 290, 330, 310, 213, 180, 200, 180, 79],
+    ],
+    // 季
+    [
+      [23, 75, 12, 97, 21, 67, 98, 21, 43, 64, 76, 38],
+      [43, 31, 65, 23, 78, 21, 82, 64, 43, 60, 19, 34],
+    ],
+    // 月
+    [
+      [34, 87, 32, 76, 98, 12, 32, 87, 39, 36, 29, 36],
+      [56, 43, 98, 21, 56, 87, 43, 12, 43, 54, 12, 98],
+    ],
+    // 周
+    [
+      [43, 73, 62, 54, 91, 54, 84, 43, 86, 43, 54, 53],
+      [32, 54, 34, 87, 32, 45, 62, 68, 93, 54, 54, 24],
+    ],
+  ];
+
+  // 遍历标题数组
+  for (let i = 0; i < saleroomItems.length; i++) {
+    // 添加点击事件
+    saleroomItems[i].addEventListener("click", function () {
+      // 排他法
+      for (let j = 0; j < saleroomItems.length; j++) {
+        // 全部的标题都删除选中类名
+        saleroomItems[j].classList.remove("saleroomItemActive");
+      }
+      // 当前的标题都添加选中类名
+      this.classList.add("saleroomItemActive");
+      // 数据更改
+      option.series[0].data = saleroomData[i][0];
+      option.series[1].data = saleroomData[i][1];
+
+      // 重新使用option
+      myChart.setOption(option);
+    });
+  }
+  // 获取销售额标题循环的下标
+  let saleroomIndex = 0;
+  // 获取销售额的计时器
+  let saleroomTimer = null;
+  saleroomTimer = setInterval(function () {
+    saleroomIndex++;
+    if (saleroomIndex >= saleroomItems.length) {
+      saleroomIndex = 0;
+    }
+    saleroomItems[saleroomIndex].click();
+  }, 2000);
+  // 滑到获取销售额的时候结束计时器
+  saleroom.addEventListener("mouseenter", function () {
+    clearInterval(saleroomTimer);
+  });
+  // 滑到获取销售额的时候开始计时器
+  saleroom.addEventListener("mouseleave", function () {
+    saleroomTimer = setInterval(function () {
+      saleroomIndex++;
+      if (saleroomIndex >= saleroomItems.length) {
+        saleroomIndex = 0;
+      }
+      saleroomItems[saleroomIndex].click();
+    }, 2000);
+  });
+
+  // 销售额统计echarts部分
+  let saleroomEcharts = document.getElementsByClassName("saleroomEcharts")[0];
+  let myChart = echarts.init(saleroomEcharts);
+  let option = {
+    title: {
+      text: "单位:万",
+      padding: [10, 40],
+      textStyle: {
+        color: "#5896e8",
+        fontWeight: 400,
+        fontSize: 15,
+      },
+    },
+    tooltip: {
+      trigger: "axis",
+    },
+    legend: {
+      data: ["预期销售额", "实际销售额"],
+      padding: -10,
+      textStyle: {
+        color: "#5896e8",
+        fontWeight: 400,
+        fontSize: 12,
+        lineHeight: 35,
+      },
+    },
+    grid: {
+      left: "3%",
+      right: "4%",
+      bottom: "3%",
+      top: "18%",
+      containLabel: true,
+      show: true,
+      borderWidth: 1,
+      borderColor: "#012f4a",
+    },
+    xAxis: {
+      type: "category",
+      boundaryGap: false,
+      data: [
+        "1月",
+        "2月",
+        "3月",
+        "4月",
+        "5月",
+        "6月",
+        "7月",
+        "8月",
+        "9月",
+        "10月",
+        "11月",
+        "12月",
+      ],
+      axisTick: {
+        alignWithLabel: true,
+        show: false,
+      },
+      axisLabel: {
+        color: "#5d99f4",
+        fontSize: 12,
+      },
+      axisLine: {
+        show: true,
+        lineStyle: {
+          color: "#0e2d49",
+        },
+      },
+    },
+    yAxis: {
+      type: "value",
+      axisLabel: {
+        color: "#5d99f4",
+        fontSize: 12,
+      },
+      splitLine: {
+        show: true,
+        lineStyle: {
+          color: "#0e2d49",
+        },
+      },
+    },
+    series: [
+      {
+        name: "预期销售额",
+        type: "line",
+        stack: "data",
+        smooth: true,
+        data: saleroomData[0][0],
+        itemStyle: {
+          color: "#78f6fe",
+        },
+        lineStyle: {
+          color: "#6ee1e9",
+          width: 2,
+        },
+      },
+      {
+        name: "实际销售额",
+        type: "line",
+        stack: "data",
+        smooth: true,
+        data: saleroomData[0][1],
+        itemStyle: {
+          color: "#e5554e",
+        },
+        lineStyle: {
+          color: "#d14e47",
+          width: 2,
+        },
+      },
+    ],
+  };
+
+  myChart.setOption(option);
+  window.addEventListener("load", function () {
+    myChart.resize();
+  });
+  window.addEventListener("resize", function () {
+    myChart.resize();
+  });
+})();
+
+/* 渠道分布 */
+(function () {
+  let systemEcharts = document.getElementsByClassName("systemEcharts")[0];
+  let myChart = echarts.init(systemEcharts);
+  const lineStyle = {
+    width: 1,
+    opacity: 0.5,
+  };
+  let option = {
+    legend: {
+      bottom: 5,
+      itemGap: 20,
+      textStyle: {
+        color: "#fff",
+        fontSize: 14,
+      },
+      selectedMode: "single",
+    },
+    radar: {
+      radius: "63%",
+      indicator: [
+        { name: "机场", max: 100 },
+        { name: "商场", max: 100 },
+        { name: "火车站", max: 100 },
+        { name: "汽车站", max: 100 },
+        { name: "地铁", max: 100 },
+      ],
+      shape: "circle",
+      splitNumber: 5,
+      axisName: {
+        color: "#4c9bfd",
+      },
+      splitLine: {
+        lineStyle: {
+          color: [
+            "rgba(255, 255, 255, 0.1)",
+            "rgba(255, 255, 255, 0.2)",
+            "rgba(255, 255, 255, 0.4)",
+            "rgba(255, 255, 255, 0.6)",
+            "rgba(255, 255, 255, 0.8)",
+            "rgba(255, 255, 255, 1)",
+          ],
+        },
+      },
+      splitArea: {
+        show: false,
+      },
+      axisLine: {
+        lineStyle: {
+          color: "rgba(255, 255, 255, 0.6)",
+        },
+      },
+    },
+    tooltip: {
+      show: true,
+      borderColor: "#ffffff",
+      backgroundColor: "rgba(89, 145, 175,0.7)",
+    },
+    series: [
+      {
+        name: "Beijing",
+        type: "radar",
+        lineStyle: lineStyle,
+        data: [[90, 100, 56, 11, 34]],
+        symbol: "circle",
+        symbolSize: 5,
+        itemStyle: {
+          color: "#ffffff",
+        },
+        areaStyle: {
+          color: "#749381",
+          opacity: 0.6,
+        },
+        lineStyle: {
+          color: "#ffffff",
+        },
+        label: {
+          show: true,
+          color: "#ffffff",
+          fontSize: 10,
+        },
+      },
+    ],
+  };
+  myChart.setOption(option);
+  window.addEventListener("load", function () {
+    myChart.resize();
+  });
+  window.addEventListener("resize", function () {
+    myChart.resize();
+  });
+})();

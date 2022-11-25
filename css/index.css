@@ -379,14 +379,44 @@ body {
   font-size: 0.2rem;
   color: #4c9bfd;
 }
-.viewport .right .brokenLine {
+.viewport .right .saleroom {
   height: 3.5rem;
   box-sizing: border-box;
   padding: 0.25rem;
 }
-.viewport .right .brokenLine h4 {
+.viewport .right .saleroom .saleroomTitle {
+  display: flex;
+}
+.viewport .right .saleroom .saleroomTitle h4 {
   font-size: 0.3125rem;
   color: #ffffff;
+}
+.viewport .right .saleroom .saleroomTitle .saleroomList {
+  width: auto;
+  height: 0.4rem;
+  display: flex;
+}
+.viewport .right .saleroom .saleroomTitle .saleroomList li {
+  width: 0.4rem;
+  height: 100%;
+  text-align: center;
+  color: #1950c4;
+  font-size: 0.25rem;
+  cursor: pointer;
+  margin: 0rem 0.15rem;
+  border-radius: 0.0625rem;
+}
+.viewport .right .saleroom .saleroomTitle .saleroomList li:empty {
+  width: 0.03rem;
+  height: 0.35rem;
+  background-color: #6feeef;
+  margin: 0rem 0.3rem;
+  border-radius: 0.0625rem;
+}
+.viewport .right .saleroom .saleroomEcharts {
+  width: 100%;
+  height: 2.4rem;
+  margin-top: 0.125rem;
 }
 .viewport .right .distribute {
   height: 3.3rem;
@@ -407,6 +437,10 @@ body {
 .viewport .right .distribute .system {
   flex: 3;
   margin-right: 0.25rem;
+}
+.viewport .right .distribute .system .systemEcharts {
+  width: 100%;
+  height: 2.3rem;
 }
 .viewport .right .distribute .quarterly {
   flex: 2.5;
@@ -457,4 +491,9 @@ body {
 /* 订单量标题选中 */
 .orderItemActive {
   color: #ffffff !important;
+}
+/* 销售额标题选中 */
+.saleroomItemActive {
+  color: #ffffff !important;
+  background-color: #4893f1;
 }
